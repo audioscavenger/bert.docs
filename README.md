@@ -68,6 +68,8 @@ Simply press **F12** to display the console. I use this feature throughout the c
 
 e.g. `console.log('some message')`
 
+also added: ag-Gridwith + checkbox customization for bollean data
+
 I plan on extending overall functionality to allow for wider integration of programming languages.
 
 # How to use
