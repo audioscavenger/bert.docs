@@ -23,7 +23,7 @@
     });
 }(window.jQuery));
 
-function install () {
+function install() {
     // Check if elevated
     var exec = WshShell.Exec("cacls %SYSTEMROOT%\\system32\\config");
     var result = exec.StdOut.ReadAll();

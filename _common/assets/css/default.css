@@ -1,18 +1,3 @@
-body{
-    font-family: "PT Sans";
-} 
-
-h1.title{
-
-    font-size: 3rem;
-}
-
-div.sourceCode {
-    background-color: #e8e8e8;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
 code{white-space: pre;}
 div.sourceCode { overflow-x: auto; }
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {

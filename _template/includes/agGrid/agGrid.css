@@ -1,0 +1,71 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+html {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+body {
+  padding: 1rem;
+  overflow: auto;
+}
+
+.example-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.grid-wrapper {
+  flex: 1 1 auto;
+  width: 100%;
+  /* margin-bottom: 5px;       for quick filters */
+}
+
+#myGrid {
+  height: 100%;
+}
+
+.example-header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.ag-cell-inline-editing {
+  border: 1px solid lightgreen !important;
+}
+.yearSelect {
+  padding: 4px;
+  border: 1px groove gray;
+  background: white;
+  text-align: center;
+}
+
+.yearButton {
+  margin: 4px;
+}
+
+.smallColumn {
+  padding: 0 !important;
+  flex-direction: column
+}
+.smallColumn .ag-header-cell-label {
+  justify-content: center;
+}
+
+.smallColumn .ag-cell-wrapper {
+  justify-content: center;
+}
+.smallColumn .ag-cell-wrapper .ag-selection-checkbox {
+  margin-right: 0;
+}

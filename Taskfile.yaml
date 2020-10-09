@@ -10,6 +10,7 @@
     header: ${curr_dir}/_common/templates/header.html
     css: ${curr_dir}/_common/templates/default.css
     watch_patterns: .*
+    AUTHOR_STRING: Bert Tejeda
     VERSION_STRING: 19.08.13.26
     DELIM: _@DELIM@_
     interval: 1

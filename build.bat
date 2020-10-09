@@ -1,12 +1,15 @@
+@@:: .\build.bat -s .\_template\default.markdown -o index.html -t .\_template\templates\default.html
 @@:: This prolog allows a PowerShell script to be embedded in a .CMD file.
 @@:: Any non-PowerShell content must be preceeded by "@@"
 @@setlocal
 @@set POWERSHELL_BAT_ARGS=%*
 @@if defined POWERSHELL_BAT_ARGS set POWERSHELL_BAT_ARGS=%POWERSHELL_BAT_ARGS:"=\"%
-@@PowerShell -noprofile -Command Invoke-Expression $('$args=@(^&{$args} %POWERSHELL_BAT_ARGS%);'+[String]::Join(';',$((Get-Content '%~f0') -notmatch '^^@@'))) & goto :EOF
+@@PowerShell -noprofile -Command Invoke-Expression $('$args=@(^&{$args} %POWERSHELL_BAT_ARGS%);'+[String]::Join(';',$((Get-Content '%~f0') -notmatch '^^@@')))
+@@copy /y index.html index.hta
+@@goto :EOF
 Set-ExecutionPolicy Bypass -Scope Process -Force
 $DEFAULT_TEMPLATE = "_template/templates/default.html"
-$DEFAULT_OUTPUT_FILEEXT = "hta"
+$DEFAULT_OUTPUT_FILEEXT = "html"
 $DEFAULT_HEADER = "_common/templates/header.html"
 $DEFAULT_CSS = "_common/templates/default.css"
 $DEFAULT_DOC_ROOT="."
@@ -30,6 +33,7 @@ $params=@{'--source|-s$' =  "[some/markdown/file.md,some/other/markdown/file2.md
 '--help|-h$' =  "display usage and exit";
 '--dry|-y$' =  "Dry Run";
 '--subprocess|-sub$' =  "Script has been launched in subprocess mode";
+'--verbose$' =  "Verbose";
 }
 FUNCTION Usage {
     WRITE-HOST "Usage: build.bat"
@@ -67,6 +71,12 @@ ForEach ($ARG In $ARGS) {
 	}
 	$i++
 }
+
+
+$noaio = True;
+$verbose = True;
+
+
 
 @@:: Show Help If Applicable
 If ($help) { Usage }
@@ -123,9 +133,14 @@ If ($metavars) {
 }
 
 @@:: Check if we want a non-all-in-one document
-If ( -Not $noaio ) {
-	$pandoc_commands += "--self-contained "
-	$pandoc_commands += " --standalone "
+@@:: If ( -Not $noaio ) {
+@@:: 	$pandoc_commands += "--self-contained "
+@@:: 	$pandoc_commands += " --standalone "
+@@:: }
+
+@@:: verbose
+If ( $verbose ) {
+	$pandoc_commands += " --verbose "
 }
 
 @@:: Echo commands if this is a Dry Run

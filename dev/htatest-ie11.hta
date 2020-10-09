@@ -1,0 +1,55 @@
+<head>
+<title>HTA Test</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=11"> -->
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=9"> -->
+<HTA:APPLICATION 
+     APPLICATIONNAME="HTA Test"
+     SCROLL="yes"
+     SINGLEINSTANCE="yes"
+     WINDOWSTATE="maximize"
+>
+
+<script language='text/javascript'>
+function TestSub() {
+  var A = {A: 1, B: 2, S: 'Hello world.'}
+  document.body.innerText = JSON.stringify(A, null, 2)
+
+  var FSO = new ActiveXObject('Scripting.FileSystemObject')
+  alert( FSO.GetAbsolutePathName('.') )
+}
+</script>
+
+<script language='text/javascript'>
+  Sub GetOSVersion()
+    strComputer = "."
+        Set objWMIService = GetObject("winmgmts:\\" & strComputer &  "\root\cimv2")
+
+        Set colOperatingSystems = objWMIService.ExecQuery _
+            ("Select * from Win32_OperatingSystem")
+
+        For Each objOperatingSystem in colOperatingSystems
+            Msgbox objOperatingSystem.Caption & " " & _
+                objOperatingSystem.Version
+        Next
+  End Sub
+</script>
+
+<script language='text/javascript'>
+  sub window_onLoad()
+  set oFSO=CreateObject("Scripting.FileSystemObject")
+  set oFile=oFSO.OpenTextFile("htatest-ie8.hta",1)
+  text=oFile.ReadAll
+  document.all.ScriptArea.value=text
+  oFile.Close
+  end sub
+</script>
+
+</head>
+
+<body>
+<textarea name="ScriptArea" rows=10 cols=70></textarea><p></p>
+<input type="button" value="TestSub" name="run_button"  onClick="TestSub()"><p> 
+<input type="button" value="GetOSVersion" name="run_button"  onClick="GetOSVersion()"><p> 
+
+</body>

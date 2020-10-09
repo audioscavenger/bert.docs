@@ -1,0 +1,26 @@
+<!-- <div id="myGrid" style="height: 200px; width:500px;" class="ag-theme-alpine"></div> -->
+<!-- <div id="myGrid" class="ag-theme-alpine"></div> -->
+<!-- <div id="myGrid" style="height: 200px; width:500px;" class="ag-theme-alpine"></div> -->
+
+<!-- https://www.ag-grid.com/javascript-grid-cell-editing/#losingFocusStopsEditing -->
+<div class="example-wrapper">
+  <div style="margin-bottom: 5px;" >
+    <input
+    type="text"
+    oninput="onQuickFilterChanged()"
+    id="quickFilter"
+    placeholder="quick filter..."
+    />
+    Clicking outside the grid will stop the editing
+    <button id="getSelectedRows" style="font-size: 12px;" onclick="getSelectedRows()">Get Selected Rows</button>
+    <button id="loadCSV" style="font-size: 12px;" onclick="loadCSV()">Load CSV</button>
+    <button id="saveCSV" style="font-size: 12px;" onclick="saveCSV()">Save CSV</button>
+  </div>
+  <div class="grid-wrapper">
+    <div id="myGrid" class="ag-theme-alpine" style="height: 300px; width:100%;"></div>
+  </div>
+</div>
+
+
+<!-- <input type='password' name='pass' size='15' onkeypress="return entperPressed(event)" ></input>
+<button onclick='pipePass()'>Submit <img src="./assets/favicon.ico" alt="Embedded icon" title="Embedded icon" /></button> -->

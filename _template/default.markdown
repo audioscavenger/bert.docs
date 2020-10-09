@@ -1,20 +1,25 @@
 ---
-title: Title Here
-subtitle: Some Subtitle
+title: htaProjectName
+subtitle: nQui
 author:
-- name: Author Name
+- name: Bert Tejeda
+  affiliation: Original author
+- name: Eric Derewonko
+  affiliation: nQ Zebraworks Inc.
 sections:
 - name: Section 1
   id: section1
-- name: Section 2
-  id: section2
-- name: Section 3
-  id: section3
-- name: Section 4
-  id: section4
-date: 08.13.2018
-<!-- header-includes: 
-- <script src="assets/jquery/hello.js"></script> -->
+- name: agGrid
+  id: section_agGrid
+- name: PP
+  id: section_pp
+- name: Pandoc
+  id: section_pandoc
+date: 10/02/2020
+version: 1.0.2
+copyright:
+- date: 2020 nQ ZebraWorks Inc.
+  rights: All rights reserved.
 ---
 <div id="start">
 
@@ -82,8 +87,9 @@ Inline Link: [inline link](http://example.com "Title")
 
 [implicit reference link]: http://example.com
 
-[someotherid]: _template/assets/images/icon.png
-![inline image](_template/assets/images/icon.png)
+[someotherid]: _template/assets/images/square.png
+![inline image](_template/assets/images/square.png)
+![ico image](_template/assets/images/square.ico)
 ![reference image][someotherid]
 
 This is a link to a footer [^1]
@@ -238,7 +244,8 @@ $ rm dist/*
 
 </div>
 
+
 !include(includes/section1.md)
-!include(includes/section2.md)
-!include(includes/section3.md)
-!include(includes/section4.md)
+!include(includes/section_agGrid.md)
+!include(includes/section_pp.md)
+!include(includes/section_pandoc.md)
