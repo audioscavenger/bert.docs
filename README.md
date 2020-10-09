@@ -72,6 +72,16 @@ also added: ag-Gridwith + checkbox customization for bollean data
 
 I plan on extending overall functionality to allow for wider integration of programming languages.
 
+## addons:
+0. added static bootstrap 4.5 topnav
+1. added agGrid
+2. UI working again on ie11-ff-chrome
+3. added Quick table Filter
+4. added groupped header checkbox to agGrid
+5. agGrid groupped checkbox multi-select working!
+6. agGrid checkboxes now mimic original agGrid css!
+
+
 # How to use
 
 If you're on Windows, you should be able to install the project requirements using the [bootstrap.bat](bootstrap.bat) script.
