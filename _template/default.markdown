@@ -5,7 +5,7 @@ author:
 - name: Bert Tejeda
   affiliation: Original author
 - name: Eric Derewonko
-  affiliation: nQ Zebraworks Inc.
+  affiliation: Company Inc.
 sections:
 - name: Section 1
   id: section1
@@ -18,7 +18,7 @@ sections:
 date: 10/02/2020
 version: 1.0.2
 copyright:
-- date: 2020 nQ ZebraWorks Inc.
+- date: 2020 Company Inc.
   rights: All rights reserved.
 ---
 <div id="start">
